@@ -1,15 +1,15 @@
+import React from 'react';
+import { navLinks } from "../constants"; // Fixed the space and path
 
-import {navLinks} from "../ constants";
 const NavBar = () => {
     return (
         <header>
             <nav>
                 <img src="logo.svg" alt="apple logo"/>
                 <ul>
-
-                    {navLinks.map(({ label }) => (
-                        <li key={label}>
-                            <a href={label}>{label}</a>
+                    {navLinks.map((nav) => (
+                        <li key={nav.id}>
+                            <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
                 </ul>
@@ -25,7 +25,7 @@ const NavBar = () => {
                 </div>
             </nav>
         </header>
-    )
-}
+    );
+};
 
 export default NavBar;
